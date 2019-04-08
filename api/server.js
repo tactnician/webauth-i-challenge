@@ -1,18 +1,18 @@
 const express = require('express');
-
-server = express();
+const cors = require('cors');
 const helmet = require('helmet');
 
 const router = require('../router/router');
 
+server = express();
+
 server.use(express.json())
 server.use(helmet());
-
+server.use(cors('headers'));
 
 server.get('/', (req, res) => {
     res.send(`
-        <h1> Hi Mom, </h1>
-        <p> This server is running on my Laptop </p>
+        <h1> Portal </h1>
     `)
 })
 
