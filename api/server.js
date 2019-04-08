@@ -11,9 +11,11 @@ server.use(helmet());
 
 server.get('/', (req, res) => {
     res.send(`
-        <h1> Portal </h1>
+        <h1> Hi Mom, </h1>
+        <p> This server is running on my Laptop </p>
     `)
 })
 
+server.use('/api', router);
 
 module.exports = server; 
