@@ -1,8 +1,11 @@
+
+const Auth = require('../router/router-helper')
+
 function restricted(req, res, next) {
     const {username, password} = req.headers;
     
         if(username && password) {
-        Users.findBy({username})
+        Auth.findBy({username})
         .first()
         .then(user => {
             if (user && bcrypt.compareSync(password, user.password)) {

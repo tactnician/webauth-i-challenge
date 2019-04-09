@@ -15,6 +15,7 @@ router.post('/register', (req, res) => {
             res.status(201).json(saved);
         })
         .catch(error => {
+            console.log(error);
             res.status(500).json(error)
         });
 });
@@ -39,7 +40,7 @@ router.post('/login', (req, res) => {
 router.get('/restricted/users', restricted, (req, res)=>{
     Auth.find()
         .then(user => {
-            res.json(users);
+            res.json(user);
         })
         .catch(error => res.send(error));
 })
