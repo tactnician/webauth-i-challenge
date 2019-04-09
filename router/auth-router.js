@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 
-const Auth = require('./router-helper');
+const Auth = require('./auth-helper');
 const restricted = require('../middleware/restricted');
 
 
