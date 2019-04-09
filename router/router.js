@@ -37,10 +37,10 @@ router.post('/login', (req, res) => {
         })
 })
 
-router.get('/restricted/users', restricted, (req, res)=>{
+router.get('/users',  (req, res)=>{
     Auth.find()
-        .then(user => {
-            res.json(user);
+        .then(users => {
+            res.json(users);
         })
         .catch(error => res.send(error));
 })
